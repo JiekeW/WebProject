@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}五子棋{% endblock %}
+{% block css %}
+	<style type="text/css">
+     #container {
+        width: 531px;
+        height: 535px;
+        margin: 0 auto;
+        border: 1px solid gray;
+        background:url("{% static 'five/qipan.jpg' %}") no-repeat;
+        padding-top: 5px;
+        padding-left: 5px;
+        }
+       td{
+        width: 40px;
+        height:35px;
+        }
+    table{      
+        border-collapse: collapse;
+        width: 525px;
+        height: 465px;
+    }
+    </style>
+{% endblock %}
+{% block content %}
+	<!-- Container -->
+    <div id="container">
+    <!-- table model -->
+    <table id="chessboard">
+
+    </table>
+
+   <!-- 控件模块 -->
+   <br>
+   <div>
+   <p>&nbsp;当前棋手：
+   <img id="qizi" src="{% static 'five/black.png' %}">
+   <input type="button" value="黑棋先行" onclick="status1()">
+   <input type="button" value="白棋先行" onclick="status2()">
+   <input type="button" value="再来一局" onclick="window.location.href=window.location">
+   <input type="button" value="退出游戏" onclick="closeFunction()">
+   </p>
+   </div>
+  </div>
+    <!-- Container Ends -->
+	<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/wuzi.js' %}"></script>
+    <script type="text/javascript">
+    	/*状态事件*/
+    	function status1(){
+		      //window.location.href=window.location;
+		      if(isbegin){
+		         alert("game has begun");
+		         return;
+		      }
+		      document.getElementById('qizi').src="{% static 'five/black.png' %}";
+		   }
+		function status2(){
+		      if(isbegin){
+		         alert("game has begun");
+		         return;
+		      }
+		      document.getElementById('qizi').src="{% static 'five/white.png' %}";
+		   }
+		function getAnotherPic(){
+		   src = "{% static 'five/white.png' %}"
+		   //alert(document.getElementById('qizi').src)
+		   if(document.getElementById('qizi').src.indexOf('white') > 0){
+		      src = "{% static 'five/black.png' %}";
+		   }
+		   return 'url(' + src + ')';
+		}
+    </script>
+{% endblock %}

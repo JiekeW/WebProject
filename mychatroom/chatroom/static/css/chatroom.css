@@ -1,0 +1,115 @@
+.bubbleItem{
+    width: 100%;
+}
+.bubble{
+    max-width: 655px;
+    position: relative;
+    line-height: 30px;
+    padding-left: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 7px;
+    margin-top: 15px;
+    padding-right: 3px;
+    display: inline-block;
+}
+.leftBubble{
+    position: relative;
+    margin-left: 5px;
+    border: 1px solid #00b6b6;
+    background-color: #f8fdfc;
+}
+.leftBubble .bottomLevel{
+    position: absolute;
+    top: 10px;
+    left: -10px;
+    border-top: 10px solid #00b6b6;
+    border-left: 10px solid transparent;
+}
+.leftBubble .topLevel{
+    position: absolute;
+    top: 11px;
+    left: -8px;
+    border-top: 10px solid #f8fdfc;
+    border-left: 10px solid transparent;
+    z-index: 100;
+}
+.rightBubble{
+    position: relative;
+    margin-right: 5px;
+    border: 1px solid #aaa;
+}
+.rightBubble .bottomLevel{
+    position: absolute;
+    top: 10px;
+    right: -10px;
+    border-top: 10px solid #aaa;
+    border-right: 10px solid transparent;
+}
+.rightBubble .topLevel{
+    position: absolute;
+    top: 11px;
+    right: -8px;
+    border-top: 10px solid #fff;
+    border-right: 10px solid transparent;
+    z-index: 100;
+}
+#MsgArea{
+    position: absolute;
+    width: 75%;
+    height: 560px;
+    margin:auto;
+}
+#showFunction{
+    /*display: none;*/
+    position: fixed;
+    right: 0;
+    top:220px;
+    width: 30px;
+    height: 100px;
+    background-color: #ddd;
+    text-align: center;
+    padding: 8px;
+    font-size: 12px;
+}
+#FuncArea,#MusicArea{
+    position: absolute;
+    left: 75%;
+    width: 25%;
+    height: 560px;
+}
+/*#MusicArea .panel-heading span:first-child{
+    color: #aaa;
+}*/
+#MusicArea .panel-body input{
+    width: 68%;
+    font-size: 12px;
+}
+#MusicArea .panel-body button{
+    width: 30%;
+}
+#MusicArea .panel-body .table{
+    font-size: 10px; 
+    overflow-y: auto; 
+    height: 450px; 
+    margin-bottom: 10px;
+}
+#MusicArea .panel-body .table td{
+    width: 60%;
+    padding: 5px 5px 5px 0;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#MusicArea .panel-body .audio{
+    width: 100%;
+    height: 50px;
+    border-radius: 0;
+}
+#MusicArea .panel-body .audio audio{
+    width: 100%;
+    height: 50px;
+    border-radius: 0;
+}
